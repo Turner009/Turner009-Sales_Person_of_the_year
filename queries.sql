@@ -9,16 +9,15 @@ JOIN products
 -- 2a. Create a View for the query you made in Problem 1 named "all_sales"
 -- NOTE: You'll want to remove any duplicate columns to clean up your view!
 
-
 -- 2b. Test your View by selecting all rows and columns from the View
-SELECT * FROM all_sales;
-SELECT DISTINCT salesID FROM all_sales;
+
+SELECT DISTINCT * FROM all_sales;
 -- Problem 3
 -- Find the average sale amount for each sales person
-SELECT DISTINCT employeeID, FORMAT((AVG(quantity*price)), 2) AS 'Average Amount' FROM all_sales GROUP BY employeeID;
+SELECT DISTINCT employeeID, FORMAT((AVG(SaleAmount)), 2) AS 'Average Sale Amount' FROM all_sales GROUP BY employeeID;
 -- Problem 4
 -- Find the top three sales persons by total sales
-SELECT DISTINCT EMPLOYEEid, FORMAT(sum(quantity*price), 2) AS 'Total Sales' FROM all_sales GROUP BY employeeid ORDER BY sum(quantity*price) desc LIMIT 3;
+SELECT DISTINCT EMPLOYEEid, FORMAT(sum(SaleAmount), 2) AS 'Total Sales' FROM all_sales GROUP BY employeeid ORDER BY sum(quantity*price) desc LIMIT 3;
 -- Problem 5
 -- Find the product that has the highest price
 SELECT * FROM products ORDER BY price DESC;
@@ -31,7 +30,7 @@ SELECT   name AS 'Product Name', productid, count(productID) AS "# Of product sa
 SELECT DISTINCT name, productid, price FROM all_sales WHERE price > (SELECT avg(price) FROM all_sales);
 -- Problem 8
 -- Find the customer who spent the most money in purchased products
-SELECT DISTINCT customerID, FORMAT(sum(quantity*price), 2) AS 'TOTAL SPENT' FROM all_sales GROUP BY customerID ORDER BY sum(quantity*price) DESC LIMIT 1;
+SELECT DISTINCT customerID, FORMAT(sum(SaleAmount), 2) AS 'Total Spent' FROM all_sales GROUP BY customerID ORDER BY sum(SaleAmount) DESC LIMIT 1;
 -- Problem 9
 -- Find the total number of sales for each sales person
 SELECT DISTINCT employeeID, count(salesID) AS 'Number of Sales' FROM all_sales GROUP BY employeeID ORDER BY count(salesID) DESC;
