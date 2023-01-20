@@ -23,11 +23,11 @@ SELECT DISTINCT EMPLOYEEid, FORMAT(sum(SaleAmount), 2) AS 'Total Sales' FROM all
 SELECT * FROM products ORDER BY price DESC;
 -- Problem 6
 -- Find the product that was sold the most times
-SELECT   name AS 'Product Name', productid, count(productID) AS "# Of product sales" FROM all_sales group by productid, name order by count(productID) DESC;
-
+SELECT   name AS 'Product Name', productid, count(productID) AS "# Of product sales", FORMAT(sum(quantity),'N','en-us') AS "Total Quantity sold" FROM all_sales group by productid, name order by sum(quantity) DESC;
+-- Result shows most number of sales and highest quantity sold
 -- Problem 7
 -- Using a subquery, find all products that have a price higher than the average price for all products
-SELECT DISTINCT name, productid, price FROM all_sales WHERE price > (SELECT avg(price) FROM all_sales);
+SELECT DISTINCT name, productid, price FROM all_sales WHERE price > (SELECT avg(price) FROM all_sales) ORDER BY productID;
 -- Problem 8
 -- Find the customer who spent the most money in purchased products
 SELECT DISTINCT customerID, FORMAT(sum(SaleAmount), 2) AS 'Total Spent' FROM all_sales GROUP BY customerID ORDER BY sum(SaleAmount) DESC LIMIT 1;

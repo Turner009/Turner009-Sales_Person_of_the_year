@@ -17,11 +17,12 @@ Employee #21 Dirk Stringer, even though he was seventh in number of sales, he av
 Dirk out sold the next closest sales person by $24.6 million in total sales and his average sale was 61% higher.
 
 3. Was there any relationship between the average sale amount for the top salespersons and the total sales?
+
 Yes the top salespersons rankings according to average sale amount matches the top three ranking according to total sales.
 
 4. How do you think the top selling salesperson gained so many sales? What was their strategy?
 
-- Did they sell to many customers, or a dedicated few? 87% of Dirk's sales came from the over all highest spending customer. 
+- Did they sell to many customers, or a dedicated few?   87% of Dirk's sales came from the over all highest spending customer. 
 - Did they tend to sell a few big ticket (high priced) items, or did they focus on a high volume of lower priced items? Being seventh in total sales lets us know his sales were made up of mostly high priced items.
 
  
@@ -35,10 +36,10 @@ The product the generated the least dollars was Adjustable Race (Id# 1) with $84
 
 By quanity - 
 There was a three way tie for most sales for products between External Lock Washer 7 (ID# 86), Mountaion-100 Black, 38(ID#280)
- and Touring-3000 Blue, 54(ID# 463) with 25 sales each.
+ and Touring-3000 Blue, 54(ID# 463) all with 25 sales each.
 
-The slowest moving products were the Fender Set-Mountain (ID# 383) with only 1 sale  and Road-350-W Yellow, 44 (ID# 480)  and Touring-2000 Blue, 50 (ID# 476) with 3 sales each.
+The slowest moving product was the Fender Set-Mountain (ID# 383) with only 1 sale.
 
 6. What problems did you find in the data? (For example, where there any products without a price?)
 Yes products ID#s 9, 26, 86, 90, 153 have a zero price even though we show sales for those items.
-There is no field to track total value of each sale.
+There is no field to track total value of each sales transaction.
